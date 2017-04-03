@@ -3,6 +3,7 @@ import {Link} from 'react-router'
 import {connect} from 'react-redux'
 import store from '../store'
 import axios from 'axios'
+import {signin} from '../actions/curriculum'
 
 class Header extends React.Component{
   handleClick(){
@@ -11,12 +12,22 @@ class Header extends React.Component{
     axios.get('http://tiger.haoduoshipin.com/user/logout')
     .then(res=>{
       alert(res.data.msg)
-      store.dispatch({type:'SignIn',userId:'',userName:''})
+      // store.dispatch({type:'SignIn',userId:'',userName:''})
+      let id='';
+      let name='';
+      this.props.signin(id,name)
     })
     console.log('header',this.props.userName)
   }
+  componentWillMount(){
+    var name=JSON.parse(localStorage.getItem('username'))
+    var id=JSON.parse(localStorage.getItem('userId'))
+    this.props.signin(id,name)
+  }
   render(){
     console.log('header',this.props.userName)
+    localStorage.setItem('username',JSON.stringify(this.props.userName))
+    localStorage.setItem('userId',JSON.stringify(this.props.userId))
     return(
         <header>
           <h3><Link to='/'>首页</Link></h3>
@@ -30,6 +41,6 @@ class Header extends React.Component{
 }
 
 let mapStateToProps = (state)=> {
-  return { userId:state.user.userId,userName:state.user.userName }
+  return { userId:state.user.userId,userName:state.user.userName}
 }
-export default connect(mapStateToProps)(Header)
+export default connect(mapStateToProps,{signin})(Header)

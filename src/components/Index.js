@@ -18,12 +18,14 @@ class Index extends React.Component{
     return(
       <div className='index'>
         <h4>已发布课程</h4>
+        <div className='line'></div>
         <div className='list'>
           {this.props.All.map((item,index)=>
-            <div key={Math.random()} >
+            <div key={Math.random()} className='curriculum-warp'>
               <div className='curriculum'>
-                <h3>{item.name}</h3>
+                <img src='http://o86bpj665.bkt.clouddn.com/posters/react-baby.png'/>
               </div>
+              <h3>{item.name}</h3>
             </div>)}
         </div>
       </div>
