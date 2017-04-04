@@ -41,12 +41,32 @@ header>h3{
 .header-right>p{
   margin-right: 10px;
   font-size: 3vh;
+  cursor: pointer;
+}
+.pay{
+  display: flex;
+  height: 20vh;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: space-around;
+  align-items: center;
+}
+.pay button{
+  width: 18vh;
+  height: 8vh;
+  border-radius: 3vh;
+  font-size: 4vh;
+  border: inline;
+  border: none;
+  background-color: #fff;
+  color: #00cbe5;
 }
 .curriculum-warp{
   border:1px solid #ccc;
-  margin: 18px;
+  margin: 4vh;
   box-shadow: 1px 1px 1px 1px #ccc;
   width: 39vh;
+  height: 35vh;
+  position: relative;
 }
 .curriculum{
   width: 39vh;
@@ -61,6 +81,22 @@ header>h3{
 .curriculum-warp>h3{
   text-align: center;
   line-height: 6vh;
+  font-size: 3vh;
+}
+.curriculum-warp button{
+  position: absolute;
+  left:14vh;
+  bottom:-3vh;
+  width: 11vh;
+  height: 5vh;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  border: inline;
+  border: none;
+  border: 2px solid #03a9f4;
+  cursor: pointer;
+  color:#00daf6;
   font-size: 3vh;
 }
 .list{

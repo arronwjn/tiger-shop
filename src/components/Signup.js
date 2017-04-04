@@ -4,6 +4,8 @@ import AutoComplete from 'material-ui/AutoComplete';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {signup} from '../actions/curriculum'
 import {connect} from 'react-redux'
+import {hashHistory} from 'react-router'
+
 
 class SignUp extends React.Component{
   constructor(){
@@ -34,6 +36,7 @@ class SignUp extends React.Component{
    .then(res=>{
      console.log('res',res)
      this.props.signup(res.data.userId,res.data.user)
+     hashHistory.push('/')
    })
  }
   render(){

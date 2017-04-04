@@ -4,7 +4,7 @@ import AutoComplete from 'material-ui/AutoComplete';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {signin} from '../actions/curriculum'
 import {connect} from 'react-redux'
-import {browserHistory} from 'react-router'
+import {hashHistory} from 'react-router'
 
 class SignIn extends React.Component{
   constructor(){
@@ -35,7 +35,7 @@ class SignIn extends React.Component{
    .then(res=>{
      console.log('res',res)
      this.props.signin(res.data.userId,res.data.user)
-     browserHistory.push('/')
+     hashHistory.push('/')
    })
  }
   render(){

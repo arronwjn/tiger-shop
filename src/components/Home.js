@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import Header from './Header'
+import Pay from './Pay'
 
 
 
@@ -12,6 +13,7 @@ class Home extends React.Component{
           <div className='mywarp'>
             {this.props.children}
           </div>
+          <Pay/>
         </div>
 
     )

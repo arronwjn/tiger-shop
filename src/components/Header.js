@@ -11,7 +11,6 @@ class Header extends React.Component{
 
     axios.get('http://tiger.haoduoshipin.com/user/logout')
     .then(res=>{
-      alert(res.data.msg)
       // store.dispatch({type:'SignIn',userId:'',userName:''})
       let id='';
       let name='';
@@ -32,7 +31,7 @@ class Header extends React.Component{
         <header>
           <h3><Link to='/'>首页</Link></h3>
           <div className='header-right'>
-            {this.props.userName?<p>{this.props.userName}</p>:<p><Link to='signin'>登录</Link></p>}
+            {this.props.userName?<p><Link to={`center/${this.props.userName}`}>{this.props.userName}</Link></p>:<p><Link to='signin'>登录</Link></p>}
             {this.props.userName?<p onClick={this.handleClick.bind(this)}>退出</p>:<p><Link to='signup'>注册</Link></p>}
           </div>
         </header>

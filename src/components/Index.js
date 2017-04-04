@@ -13,6 +13,9 @@ class Index extends React.Component{
       this.props.curriculum(res.data.cats)
     })
   }
+  handleClick(){
+    console.log('pay')
+  }
   render(){
     console.log('index',this.props.All)
     return(
@@ -26,6 +29,7 @@ class Index extends React.Component{
                 <img src='http://o86bpj665.bkt.clouddn.com/posters/react-baby.png'/>
               </div>
               <h3>{item.name}</h3>
+              <button onClick={this.handleClick.bind(this)}>购买</button>
             </div>)}
         </div>
       </div>
